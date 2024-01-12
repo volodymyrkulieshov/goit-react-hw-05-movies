@@ -15,3 +15,13 @@ export async function getMovieDetails(movieId) {
   const { data } = await axios.get(url);
   return data;
 }
+export async function getMovieCast(movieId) {
+  const url = `${BASEURL}/movie/${movieId}/credits?api_key=${APIKEY}`;
+  const { data } = await axios.get(url);
+  return data;
+}
+export async function getMovieReviews(movieId) {
+  const url = `${BASEURL}/movie/${movieId}/reviews?api_key=${APIKEY}`;
+  const { data } = await axios.get(url);
+  return data;
+}

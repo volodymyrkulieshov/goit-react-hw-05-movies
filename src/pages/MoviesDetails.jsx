@@ -44,10 +44,14 @@ const MoviesDetails = () => {
         <h3>Additional information</h3>
         <ul>
           <li>
-            <NavLink to="cast" state={location.state} />
+            <NavLink to="cast" state={location.state}>
+              Cast
+            </NavLink>
           </li>
           <li>
-            <NavLink to="reviews" state={location.state} />
+            <NavLink to="reviews" state={location.state}>
+              Reviews
+            </NavLink>
           </li>
         </ul>
       </div>
