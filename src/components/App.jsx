@@ -1,4 +1,4 @@
- const App = () => {
+const App = () => {
   return (
     <div
       style={{
@@ -7,11 +7,11 @@
         justifyContent: 'center',
         alignItems: 'center',
         fontSize: 40,
-        color: '#010101'
+        color: '#010101',
       }}
     >
       React homework template
     </div>
   );
 };
-export default App
+export default App;
