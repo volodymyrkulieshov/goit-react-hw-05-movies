@@ -1,6 +1,7 @@
 import { optionsNotify } from 'NotifyOptions/Notify';
 import { Notify } from 'notiflix';
 import { useState } from 'react';
+import { Input, Form, Button } from './SearchForm.styled';
 
 const SearchForm = ({ onSearch }) => {
   const [query, setQuery] = useState('');
@@ -23,8 +24,8 @@ const SearchForm = ({ onSearch }) => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <input
+      <Form onSubmit={handleSubmit}>
+        <Input
           value={query}
           onChange={onChangeInput}
           type="text"
@@ -33,8 +34,8 @@ const SearchForm = ({ onSearch }) => {
           autoFocus
           placeholder="Enter the movie"
         />
-        <button type="submit">Search</button>
-      </form>
+        <Button type="submit">Search</Button>
+      </Form>
     </>
   );
 };
