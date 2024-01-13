@@ -8,13 +8,13 @@ const Reviews = () => {
   const [loading, setLoading] = useState(false);
   const { movieId } = useParams();
 
-  console.log(movieReviews);
+  //   console.log(movieReviews);
 
   useEffect(() => {
     setLoading(true);
     getMovieReviews(movieId)
       .then(({ results }) => {
-        console.log(results);
+        // console.log(results);
         setMovieReviews(results);
       })
       .catch(error => {

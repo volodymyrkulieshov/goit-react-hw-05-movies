@@ -1,6 +1,6 @@
 import { getAllMovies } from 'api/api';
 import { useEffect, useState } from 'react';
-import Movies from './Movies';
+import Movies from '../components/Movies/Movies';
 import { Outlet } from 'react-router-dom';
 import Loader from 'components/Loader/Loader';
 
@@ -8,6 +8,7 @@ const Home = () => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+
   useEffect(() => {
     setLoading(true);
     getAllMovies()
@@ -17,6 +18,7 @@ const Home = () => {
       })
       .finally(() => setLoading(false));
   }, []);
+
   //   console.log(movies);
   return (
     <>
