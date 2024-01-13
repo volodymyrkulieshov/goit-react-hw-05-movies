@@ -2,6 +2,7 @@ import { getMovieReviews } from 'api/api';
 import Loader from 'components/Loader/Loader';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { ReviewsList, ReviewsItem } from './Reviews.styled';
 
 const Reviews = () => {
   const [movieReviews, setMovieReviews] = useState([]);
@@ -25,34 +26,20 @@ const Reviews = () => {
       });
   }, [movieId]);
 
-  //   useEffect(() => {
-  //     setLoading(true);
-  //     getMovieReviews(movieId)
-  //       .then(({ review }) => {
-  //         //   console.log(cast);
-  //         setMovieReview(review);
-  //       })
-  //       .catch(error => {
-  //         console.log(error);
-  //       })
-  //       .finally(() => {
-  //         setLoading(false);
-  //       });
-  //   }, [movieId]);
   return (
     <>
       {loading && <Loader />}
       {movieReviews.length > 0 ? (
-        <ul>
+        <ReviewsList>
           {movieReviews.map(({ id, author, content }) => (
-            <li key={id}>
+            <ReviewsItem key={id}>
               <p>
                 <span>Author:</span> {author}
               </p>
               <p>{content}</p>
-            </li>
+            </ReviewsItem>
           ))}
-        </ul>
+        </ReviewsList>
       ) : (
         <p>Sorry, we don`t have any review for this movie 🤷🏼‍♂️</p>
       )}

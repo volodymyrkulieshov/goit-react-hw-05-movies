@@ -16,5 +16,8 @@ code {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
-.
+.active {
+  color: yellow;
+}

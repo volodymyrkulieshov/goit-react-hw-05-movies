@@ -8,7 +8,7 @@ const HeaderContainer = styled.header`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  min-height: 64px;
+  height: 40px;
   padding-right: 24px;
   padding-left: 0px;
   padding-top: 12px;
@@ -29,13 +29,10 @@ const HeaderList = styled.ul`
 
 const HeaderItem = styled.li`
   text-decoration: none;
+  color: white;
 
   :hover {
     color: white;
-    // font-size: 30px;
-    // border-color: rgb(81, 29, 131);
-    // -webkit-text-stroke-width: 0.5px;
-    // -webkit-text-stroke-color: rgb(81, 29, 131);
   }
 `;
 export { HeaderContainer, HeaderList, HeaderItem };

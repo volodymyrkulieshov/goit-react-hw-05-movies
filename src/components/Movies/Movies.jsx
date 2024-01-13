@@ -1,28 +1,31 @@
 import { Link, useLocation } from 'react-router-dom';
 import { AiOutlineFileImage } from 'react-icons/ai';
+import { Card, Img, MovieItem, MoviesList } from './Movies.styled';
 
 const Movies = ({ movies }) => {
   //   console.log(movies);
   const location = useLocation();
   return (
     <>
-      <ul>
+      <MoviesList>
         {movies.map(({ id, title, poster_path }) => (
-          <li key={id}>
+          <MovieItem key={id}>
             <Link to={`/movies/${id}`} state={{ from: location }}>
-              {title}
-              {poster_path ? (
-                <img
-                  src={`https://image.tmdb.org/t/p/w300${poster_path}`}
-                  alt={title}
-                />
-              ) : (
-                <AiOutlineFileImage size={200} />
-              )}
+              <Card>
+                {poster_path ? (
+                  <Img
+                    src={`https://image.tmdb.org/t/p/w300${poster_path}`}
+                    alt={title}
+                  />
+                ) : (
+                  <AiOutlineFileImage size={200} />
+                )}
+                {title}
+              </Card>
             </Link>
-          </li>
+          </MovieItem>
         ))}
-      </ul>
+      </MoviesList>
     </>
   );
 };
